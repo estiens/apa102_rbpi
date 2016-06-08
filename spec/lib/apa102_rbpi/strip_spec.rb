@@ -1,3 +1,5 @@
+# spec/lib/apa102_rbpi/strip_spec.rb
+
 describe 'Strip' do
 
   before(:all) do
@@ -50,8 +52,8 @@ describe 'Strip' do
       end
 
       expect(Apa102Rbpi.base.led_frames).to eq [ 255, 0, 0, 0, 255, 1, 1, 1,
-                                            255, 2, 2, 2, 255, 3, 3, 3,
-                                            255, 4, 4, 4, 255, 5, 5, 5 ]
+                                                 255, 2, 2, 2, 255, 3, 3, 3,
+                                                 255, 4, 4, 4, 255, 5, 5, 5 ]
     end
 
     it 'should be able to pass in a brightness with an array' do
@@ -65,8 +67,8 @@ describe 'Strip' do
       end
 
       expect(Apa102Rbpi.base.led_frames).to eq [ 255, 255, 77, 77, 255, 255, 77, 77,
-                                            255, 255, 77, 77, 255, 255, 77, 77,
-                                            255, 255, 77, 77, 255, 255, 77, 77 ]
+                                                 255, 255, 77, 77, 255, 255, 77, 77,
+                                                 255, 255, 77, 77, 255, 255, 77, 77 ]
     end
 
     it 'should be able to set a brightness with hex' do
@@ -99,8 +101,8 @@ describe 'Strip' do
         strip.reverse
         strip.set_pixel(0, [255,255,255])
         expect(Apa102Rbpi.base.led_frames).to eq [ 255, 0, 0, 0, 255, 0, 0, 0,
-                                              255, 0, 0, 0, 255, 0, 0, 0,
-                                              255, 0, 0, 0, 255, 255, 255, 255]
+                                                   255, 0, 0, 0, 255, 0, 0, 0,
+                                                   255, 0, 0, 0, 255, 255, 255, 255]
       end
     end
 
@@ -139,8 +141,8 @@ describe 'Strip' do
       expect(top_strip.mirrors.first).to eq bottom_strip
 
       expect(Apa102Rbpi.base.led_frames).to eq [255, 0, 0, 0, 255, 0, 0, 0,
-                                                  255, 0, 255, 255, 255, 0, 0, 0,
-                                                  255, 0, 0, 0, 255, 0, 255, 255 ]
+                                                255, 0, 255, 255, 255, 0, 0, 0,
+                                                255, 0, 0, 0, 255, 0, 255, 255 ]
     end
   end
 end
